@@ -1,7 +1,7 @@
 <?php
 namespace Lukasss93PHP;
 
-class cookiebanner
+class CookieBanner
 {
     public static function generateBanner($policy_url)
     {
