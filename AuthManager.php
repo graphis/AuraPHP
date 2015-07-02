@@ -1,12 +1,10 @@
 <?php
-namespace Lukasss93PHP;
+namespace UtilityPHP;
 
 class AuthManager
 {
-	const CHARS_SALT="\!%&/()=?^{}[]@#+-_*:,;";
-	
-	private function __construct() { }
-	
+	const CHARS_SALT="!%&/()=?^{}[]@#+-_*:,;";
+
 	public static function create_salt()
 	{
 		$array_chars=str_split(self::CHARS_SALT);
@@ -31,6 +29,18 @@ class AuthManager
 	{
 		return md5(md5($password).md5($salt));
 	}
+
+    public static function validate_password($normal,$salt,$encrypted)
+    {
+        if(md5(md5($normal).md5($salt))==$encrypted)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
 ?>

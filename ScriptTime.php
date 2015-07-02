@@ -1,5 +1,5 @@
 <?php
-namespace Lukasss93PHP;
+namespace UtilityPHP;
 
 class ScriptTime
 {
