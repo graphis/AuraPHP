@@ -16,14 +16,14 @@ abstract class Enum
 
         if (!array_key_exists($calledClass, self::$constCacheArray))
         {
-            $reflect = new ReflectionClass($calledClass);
+            $reflect = new \ReflectionClass($calledClass);
             self::$constCacheArray[$calledClass] = $reflect->getConstants();
         }
 
         return self::$constCacheArray[$calledClass];
     }
 
-    public static function isValidName($name, $strict = false)
+    public static function isValidName($name, $strict = true)
     {
         $constants = self::getConstants();
 
