@@ -1,5 +1,5 @@
 <?php
-namespace UtilityPHP;
+namespace AuraPHP;
 
 abstract class Enum
 {
